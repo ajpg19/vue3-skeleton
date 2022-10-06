@@ -83,7 +83,40 @@
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <!-- Replace with your content -->
         <div class="px-4 py-6 sm:px-0">
-          <div class="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+          <div class="h-96 rounded-lg border-4 border-dashed border-gray-200">
+            <div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+              <div>
+                <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><!-- ... --></svg>
+                </span>
+              </div>
+              <h3 class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">Writes Upside-Down</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+            <div class="shrink-0">
+              <img class="h-12 w-12" src="/src/assets/vite.svg" alt="ChitChat Logo">
+            </div>
+            <div>
+              <div class="text-xl font-medium text-black">ChitChat</div>
+              <p class="text-slate-500">You have a new message!</p>
+              <Switch
+                v-model="enabled"
+                :class="enabled ? 'bg-blue-600' : 'bg-gray-200'"
+                class="relative inline-flex h-6 w-11 items-center rounded-full"
+            >
+              <span class="sr-only">Enable notifications</span>
+              <span
+                  :class="enabled ? 'translate-x-6' : 'translate-x-1'"
+                  class="inline-block h-4 w-4 transform rounded-full bg-white transition"
+              />
+            </Switch>
+
+            </div>
+          </div>
         </div>
         <!-- /End replace -->
       </div>
@@ -92,8 +125,10 @@
 </template>
 
 <script setup>
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, Switch } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+
+import { ref } from 'vue'
 
 const user = {
   name: 'Tom Cook',
@@ -113,4 +148,6 @@ const userNavigation = [
   { name: 'Settings', href: '#' },
   { name: 'Sign out', href: '#' },
 ]
+
+const enabled = ref(false)
 </script>
