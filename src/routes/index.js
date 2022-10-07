@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 
 // 1. Define route components.
 // These are imported from other files (index container).
-import {AboutView, DashboardView, LoginView, NotFoundView} from '@/views/index.js'
+import {AboutView, DashboardView, LoginView, MainView, NotFoundView} from '@/views/index.js'
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -14,6 +14,7 @@ const routes = [
     //Main views
     {path: '/about', component: AboutView},
     {path: '/dashboard', component: DashboardView},
+    {path: '/', component: MainView},
 
     //Errors views
     {path: '/404', component: NotFoundView},

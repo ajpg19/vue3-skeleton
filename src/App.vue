@@ -7,10 +7,6 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue + Pinia + i18n + Tailwind "/>
-
-  <RouterLink to="/about" class="m-2">about</RouterLink>
-  <RouterLink to="/login">login</RouterLink>
 
   <RouterView/>
 
