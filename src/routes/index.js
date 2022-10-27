@@ -2,18 +2,36 @@ import {createRouter, createWebHistory} from 'vue-router'
 
 // 1. Define route components.
 // These are imported from other files (index container).
-import {AboutView, DashboardView, LoginView, NotFoundView} from '@/views/index.js'
+import {
+    AboutView,
+    DashboardView,
+    LoginView,
+    MainView,
+    NotFoundView, PasswordRecoveryView, PasswordResetView
+} from '@/views/index.js'
+
+import {LayoutAuth, LayoutMain} from '@/layout'
 
 // 2. Define some routes
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
     //Authenticate views
-    {path: '/login', component: LoginView},
+    {path: '/login', redirect: '/auth/login'},
+    {
+        path: '/auth/',
+        component: LayoutAuth,
+        children: [
+            {path: 'login', name: 'Login', component: LoginView},
+            {path: 'recover', name: 'PasswordRecovery', component: PasswordRecoveryView},
+            {path: 'reset', name: 'PasswordReset', component: PasswordResetView}
+        ]
+    },
 
     //Main views
     {path: '/about', component: AboutView},
-    {path: '/dashboard', component: DashboardView},
+    {path: '/dashboard', name: 'Dashboard', component: DashboardView},
+    {path: '/', component: MainView},
 
     //Errors views
     {path: '/404', component: NotFoundView},
