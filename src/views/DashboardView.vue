@@ -17,10 +17,8 @@
 </template>
 
 <script setup>
-import {LayoutFooter, LayoutHeader} from '@/layout/index.js'
+import {ApplicationFooter, ApplicationHeader} from '@/components'
 
 import {ref} from 'vue'
-
-
 const enabled = ref(false)
 </script>

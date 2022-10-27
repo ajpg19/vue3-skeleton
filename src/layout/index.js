@@ -1,4 +1,4 @@
 //Define index layout
-export {default as LayoutFooter} from './LayoutFooter.vue'
-export {default as LayoutHeader} from './LayoutHeader.vue'
+export {default as LayoutAuth} from './LayoutAuth.vue'
+export {default as LayoutMain} from './LayoutMain.vue'
 
