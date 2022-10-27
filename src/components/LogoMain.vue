@@ -1,6 +1,6 @@
 <template>
   <router-link to="/">
-    <span class="main-logo font-medium" :class="fontSize">
+    <span class="font-medium bg-clip-text fill-transparent main-logo text-transparent">
        coreinvent
     </span>
   </router-link>
@@ -8,17 +8,14 @@
 
 <script setup>
 
-defineProps({
-  fontSize: {type: String, default: "text-2xl"}
-})
-
 </script>
 
 <style scoped>
 .main-logo {
-  /*Refactor this class*/
-  background-image: -webkit-linear-gradient(0deg,#006783 0%, #547DBE 40%, #09ADEA 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: -webkit-linear-gradient(0deg, #006783 0%, #547DBE 40%, #09ADEA 70%);
+}
+
+.dark .main-logo {
+  background-image: -webkit-linear-gradient(0deg, #09ADEA 0%, #547DBE 40%, #006783 70%);
 }
 </style>
