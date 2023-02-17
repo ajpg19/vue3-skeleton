@@ -4,7 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <h1 class="text-3xl font-bold underline">
-    Hello world!
+    {{ $t('greeting') }}
   </h1>
 </template>
 
